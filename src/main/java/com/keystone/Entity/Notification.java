@@ -23,5 +23,7 @@ public class Notification {
 	private String meesage;
 	private String eventType;
 	private LocalDateTime sentAt=LocalDateTime.now();
+	
+	
 }
 
