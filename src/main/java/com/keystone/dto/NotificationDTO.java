@@ -1,5 +1,7 @@
 package com.keystone.dto;
 
+import java.util.Set;
+
 import lombok.*;
 
 @Data
@@ -8,8 +10,8 @@ import lombok.*;
 @Builder
 public class NotificationDTO {
 
-	private String eventType;
-	private String message;
-	private String subject;
-	private String recepientType;
+	public String eventType;
+	public String message;
+	public String subject;
+	public Set<String> recepientEmail;
 }
