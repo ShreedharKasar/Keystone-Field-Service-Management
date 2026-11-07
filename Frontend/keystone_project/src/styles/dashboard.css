@@ -1,0 +1,215 @@
+* {
+  box-sizing: border-box;
+  }
+
+.dashboard-container {
+display: flex;
+min-height: 100vh;
+background: #f4f6fa;
+}
+
+/* Sidebar */
+
+.sidebar-wrapper {
+width: 250px;
+flex-shrink: 0;
+background: #172554;
+color: white;
+}
+
+.sidebar {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+padding: 24px 16px;
+}
+
+.sidebar-brand {
+display: flex;
+align-items: center;
+gap: 12px;
+font-size: 21px;
+font-weight: bold;
+padding: 0 10px 35px;
+}
+
+.menu-heading {
+color: #94a3b8;
+font-size: 12px;
+margin: 0 10px 15px;
+}
+
+.sidebar-link {
+display: flex;
+align-items: center;
+gap: 13px;
+padding: 13px 12px;
+margin-bottom: 7px;
+color: #cbd5e1;
+text-decoration: none;
+border-radius: 7px;
+transition: 0.2s;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+background: #2563eb;
+color: white;
+}
+
+.sidebar-footer {
+margin-top: auto;
+padding: 20px 10px 0;
+border-top: 1px solid #334155;
+}
+
+.sidebar-footer p {
+margin-bottom: 5px;
+font-size: 13px;
+}
+
+.sidebar-footer small {
+color: #94a3b8;
+}
+
+/* Main area */
+
+.dashboard-main {
+flex: 1;
+min-width: 0;
+}
+
+/* Navbar */
+
+.top-navbar {
+height: 75px;
+background: white;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 30px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-right {
+display: flex;
+align-items: center;
+gap: 25px;
+}
+
+.notification-button,
+.menu-toggle {
+border: none;
+background: transparent;
+cursor: pointer;
+}
+
+.user-info {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.user-info strong,
+.user-info small {
+display: block;
+}
+
+.user-info strong {
+font-size: 13px;
+}
+
+.user-info small {
+color: #64748b;
+font-size: 12px;
+}
+
+.logout-button {
+display: flex;
+align-items: center;
+gap: 8px;
+padding: 9px 14px;
+background: #fee2e2;
+color: #dc2626;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+}
+
+.menu-toggle {
+display: none;
+}
+
+/* Dashboard content */
+
+.dashboard-content {
+padding: 30px;
+}
+
+/* Responsive */
+
+.sidebar-overlay {
+display: none;
+}
+
+@media (max-width: 768px) {
+
+.sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 250px;
+    height: 100vh;
+    z-index: 1001;
+    transition: left 0.3s ease;
+}
+
+.sidebar-wrapper.open {
+    left: 0;
+}
+
+.sidebar {
+    min-height: 100vh;
+}
+
+.sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+.menu-toggle {
+    display: block;
+}
+
+.top-navbar {
+    padding: 0 15px;
+}
+
+.navbar-right {
+    gap: 12px;
+}
+
+.user-info strong {
+    max-width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dashboard-content {
+    padding: 18px;
+}
+
+.logout-button {
+    font-size: 0;
+    padding: 10px;
+}
+
+.logout-button svg {
+    width: 19px;
+    height: 19px;
+}
+
+}
